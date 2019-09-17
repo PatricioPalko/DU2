@@ -10,9 +10,9 @@ $page_name = basename($_SERVER['SCRIPT_NAME'], '.php');
     <title>Nightfury</title>
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&amp;subset=latin,latin-ext">
-<!--    <link rel="stylesheet" href="asset/css/font-awesome.css">-->
-    <link rel="stylesheet" href="asset/css/normalize.css">
-    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="/asset/css/font-awesome.css">
+    <link rel="stylesheet" href="/asset/css/normalize.css">
+    <link rel="stylesheet" href="/asset/css/style.css">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,25 +47,17 @@ $page_name = basename($_SERVER['SCRIPT_NAME'], '.php');
             <nav class="group">
                 <ul class="menu navigation">
 
-<!--                    --><?php
-//
-//                        $pages = glob('*.php');
-//
-//                        foreach ($pages as $file) {
-//
-//                            $page = basename($file, '.php');
-//                            if ($page == 'index') $page = 'home';
-//
-//                            if ($page_name == $page) echo '<li><a href="'. $file .'">'. ucfirst($page) .'</a></li>';
-//                        }
-//
-//                    ?>
-
-
+                    <?php
+                    $pages = glob('*.php');
+                    foreach ($pages as $file) {
+                        $page = basename($file, '.php');
+                        if ($page == 'index') $page = 'domov';
+                        echo '<li><a href="'. $file .'"><i class="fa fa-2x fa-github"></i>'. ucfirst($page).'</a></li>';
+                    }
+                    ?>
                 </ul>
             </nav>
         </div>
     </div>
 </header>
 
-<main>
